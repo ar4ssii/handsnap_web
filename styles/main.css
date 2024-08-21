@@ -1,0 +1,151 @@
+/* color pallete
+teal - #109084
+medium black - 1e262a
+white - fdfdfd
+*/
+
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    position: relative;
+}
+
+/* CSS */
+@keyframes gradient-movement {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+#login-main-gradient {
+    background: linear-gradient(45deg, #109084, #1e262a);
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+    animation: gradient-movement 20s linear infinite;
+    background-size: 200% 200%; /* Larger size for smooth movement */
+}
+
+#login-section {
+    background-color: #1e262a;
+    border-radius: 25px;
+    height: 50vh;
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width: 768px){
+    #login-section {
+        height: auto;
+        width: 90%;
+        margin: 15px;
+    }
+    
+}
+
+/* Base button styles */
+.btn {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* Primary button */
+.btn-primary {
+    background-color: #109084!important;
+    color: #ffffff!important;
+}
+
+.btn-primary:hover {
+    background-color: #109084!important;
+}
+.bg-primary {
+    background-color: #109084 !important;
+}
+
+
+/* Custom CSS for the Sidebar */
+.sidebar {
+    height: 100%; /* Full height */
+    width: 250px; /* Default width */
+    position: fixed; /* Fixed sidebar */
+    z-index: 1; /* On top of everything */
+    top: 0;
+    left: 0;
+    background-color: #1e262a; /* Dark sidebar background */
+    padding-top: 60px; /* Space at the top for the navbar */
+    transition: all 0.3s ease; /* Smooth transition for toggle */
+    overflow-x: hidden; /* Prevent horizontal scroll when shrinking */
+}
+
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fdfdfd;
+    display: block;
+    opacity: 1;
+    transition: opacity 0.3s ease; /* Fade out text */
+}
+
+.sidebar a:hover {
+    background-color: #109084; /* Teal on hover */
+}
+
+.main-content {
+    margin-left: 250px; /* Space for the sidebar */
+    transition: margin-left 0.3s ease; /* Smooth transition */
+}
+
+#togglebtn {
+    font-size: 24px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+}
+
+/* Hidden sidebar */
+.sidebar.closed {
+    width: 0;
+    padding-top: 60px; /* Keep space for navbar */
+}
+
+.sidebar.closed a {
+    opacity: 0; /* Hide text */
+    pointer-events: none; /* Disable hover effects */
+}
+
+.main-content.closed {
+    margin-left: 0;
+}
